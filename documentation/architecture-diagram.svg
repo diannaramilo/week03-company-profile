@@ -1,0 +1,49 @@
+<svg viewBox="0 0 500 620" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <style>
+    .box { fill: #EEF2FF; stroke: #4F46E5; stroke-width: 2; rx: 10; }
+    .label { fill: #1F2937; font-size: 18px; font-weight: bold; text-anchor: middle; }
+    .sub { fill: #4B5563; font-size: 12px; text-anchor: middle; }
+    .arrow { stroke: #4F46E5; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4F46E5" />
+    </marker>
+  </defs>
+
+  <!-- Client -->
+  <rect x="150" y="10" width="200" height="70" class="box"/>
+  <text x="250" y="40" class="label">Client (Browser)</text>
+  <text x="250" y="60" class="sub">Requests a URL, e.g. /about</text>
+  <line x1="250" y1="80" x2="250" y2="120" class="arrow"/>
+
+  <!-- Route -->
+  <rect x="150" y="120" width="200" height="70" class="box"/>
+  <text x="250" y="150" class="label">Route (web.php)</text>
+  <text x="250" y="170" class="sub">Matches URL to a controller method</text>
+  <line x1="250" y1="190" x2="250" y2="230" class="arrow"/>
+
+  <!-- Controller -->
+  <rect x="150" y="230" width="200" height="70" class="box"/>
+  <text x="250" y="260" class="label">CompanyController</text>
+  <text x="250" y="280" class="sub">Prepares data, runs logic</text>
+  <line x1="250" y1="300" x2="250" y2="340" class="arrow"/>
+
+  <!-- Blade View -->
+  <rect x="150" y="340" width="200" height="70" class="box"/>
+  <text x="250" y="370" class="label">Blade View</text>
+  <text x="250" y="390" class="sub">Renders HTML using layout + data</text>
+  <line x1="250" y1="410" x2="250" y2="450" class="arrow"/>
+
+  <!-- Response -->
+  <rect x="150" y="450" width="200" height="70" class="box"/>
+  <text x="250" y="480" class="label">HTML Response</text>
+  <text x="250" y="500" class="sub">Sent back to the browser</text>
+  <line x1="250" y1="520" x2="250" y2="560" class="arrow"/>
+
+  <!-- Browser again -->
+  <rect x="150" y="560" width="200" height="50" class="box"/>
+  <text x="250" y="590" class="label" font-size="16">Browser Renders Page</text>
+
+</svg>
