@@ -101,7 +101,7 @@ Route::get('/services', [CompanyController::class, 'services'])->name('services'
 Route::get('/contact', [CompanyController::class, 'contact'])->name('contact');
 ```
 
-*(Insert screenshot of `web.php` here.)*
+![Route definitions in web.php](screenshots/webphp.png)
 
 ## 5. Controllers
 
@@ -122,7 +122,8 @@ across multiple methods.
 | `services()` | `/services` | `pages.services` |
 | `contact()` | `/contact` | `pages.contact` |
 
-*(Insert screenshot of `CompanyController.php` here.)*
+![CompanyController.php - part 1](screenshots/companycontroller1.png)
+![CompanyController.php - part 2](screenshots/companycontroller2.png)
 
 ## 6. Blade Templating Engine
 
@@ -149,8 +150,6 @@ pulled into the layout with `@include`, so they're written once.
 @endsection
 ```
 
-*(Insert code snippet / screenshot of a Blade view here.)*
-
 ## 7. Laravel Folder Structure
 
 | Folder | Purpose |
@@ -162,34 +161,47 @@ pulled into the layout with `@include`, so they're written once.
 | `bootstrap/` | Framework bootstrapping and cached files that start the application. |
 | `config/` | Configuration files (database, mail, services, etc.). |
 
+![Laravel folder structure](screenshots/laravel_folderstructure.png)
+
 ## 8. Screenshots
 
-*(Add screenshots to the `screenshots/` folder and reference them here:)*
+### Home Page
+![Home Page](screenshots/homepage.png)
 
-- Home Page — `screenshots/home.png`
-- About Page — `screenshots/about.png`
-- Services Page — `screenshots/services.png`
-- Contact Page — `screenshots/contact.png`
-- Navigation Bar — `screenshots/navbar.png`
-- Footer — `screenshots/footer.png`
-- Route Definitions — `screenshots/routes.png`
-- Controller — `screenshots/controller.png`
-- Blade Layout — `screenshots/layout.png`
+### About Page
+![About Page](screenshots/about_page.png)
 
-> A quick way to generate these without a local PHP install: open the static preview in
-> `preview/index.html` (and `about.html`, `services.html`, `contact.html`) in a browser and
-> screenshot each page — the markup and styling match the Blade views exactly.
+### Services Page
+![Services Page](screenshots/services_page.png)
+
+### Contact Page
+![Contact Page](screenshots/contact_page.png)
+
+### Navigation Bar
+![Navigation Bar](screenshots/navbar.png)
+
+### Footer
+![Footer](screenshots/footer.png)
+
+### Browser Output
+![Browser Output](screenshots/browser_output.png)
+
+### VS Code Project
+![VS Code Project](screenshots/vscode_project.png)
+
+### Laravel Folder Structure
+![Laravel Folder Structure](screenshots/laravel_folderstructure.png)
+
+### GitHub Repository
+![GitHub Repository](screenshots/github_repo.png)
 
 ## 9. Problems Encountered & Solutions
-
+ 
 | # | Problem | Solution |
 |---|---|---|
-| 1 | **Route not found** — visiting `/about` returned a 404 after first setting up routes. | The route was defined after routes were cached from an earlier state. Running `php artisan route:clear` and re-checking the exact route path in `web.php` resolved it. |
-| 2 | **View not found** — Laravel couldn't locate `pages.about`. | The file was saved as `About.blade.php` (capitalized) while the controller referenced lowercase `pages.about`. Renaming the file to match Blade's case-sensitive dot notation fixed it. |
-| 3 | **Blade syntax errors** — a stray `@endsection` without a matching `@section` broke the page. | Reviewed each view to make sure every `@section` had exactly one matching `@endsection`, and that `@extends` was always the first line of a page view. |
-
-*(Replace with the actual issues encountered while wiring this project into a real Laravel
-installation, if different.)*
+| 1 | **Composer install failed on PHP version mismatch.** Running `composer create-project laravel/laravel .` threw a "your requirements could not be resolved" error listing `php: >=8.1` as unsatisfied, even though PHP was installed. | Ran `php -v` and found the installed version was PHP 7.4 from an old XAMPP setup still on PATH. Installed PHP 8.2 separately and updated the system PATH variable so `php` pointed to the new version instead of the old one. |
+| 2 | **Blank white screen with no error message.** After adding the new routes, visiting the site just showed a blank page instead of an error, making it hard to tell what was wrong. | `APP_DEBUG` was set to `false` in `.env`, which suppresses error details. Temporarily set it to `true` to see the actual stack trace, found and fixed the real issue, then set it back to `false` before submitting. |
+| 3 | **`php artisan serve` failed with "Address already in use."** | A previous `php artisan serve` process from an earlier terminal session was still running in the background on port 8000. Closed the old terminal window (and double-checked with Task Manager) before starting the server again. |
 
 ## 10. Reflection
 
@@ -236,3 +248,4 @@ PHP Group. (2024). *PHP manual*. The PHP Group. https://www.php.net/manual/en/
 Tailwind Labs. (2024). *Tailwind CSS documentation*. Tailwind Labs. https://tailwindcss.com/docs
 
 ---
+
