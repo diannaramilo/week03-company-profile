@@ -69,12 +69,12 @@ class CompanyController extends Controller
         $company = $this->companyInfo();
 
         $services = [
-            ['icon' => '💻', 'title' => 'Web Development', 'description' => 'Responsive websites and web applications using modern frameworks.'],
-            ['icon' => '📱', 'title' => 'Mobile Development', 'description' => 'Cross-platform mobile apps built for performance and usability.'],
-            ['icon' => '🎨', 'title' => 'UI/UX Design', 'description' => 'User-centered interface design backed by research and testing.'],
-            ['icon' => '☁️', 'title' => 'Cloud Solutions', 'description' => 'Scalable cloud infrastructure, deployment, and monitoring.'],
-            ['icon' => '🔒', 'title' => 'Cybersecurity', 'description' => 'Security audits, hardening, and incident response planning.'],
-            ['icon' => '🧭', 'title' => 'IT Consulting', 'description' => 'Technology strategy and systems planning for growing teams.'],
+            ['icon' => 'monitor', 'title' => 'Web Development', 'description' => 'Responsive websites and web applications using modern frameworks.'],
+            ['icon' => 'device', 'title' => 'Mobile Development', 'description' => 'Cross-platform mobile apps built for performance and usability.'],
+            ['icon' => 'layers', 'title' => 'UI/UX Design', 'description' => 'User-centered interface design backed by research and testing.'],
+            ['icon' => 'cloud', 'title' => 'Cloud Solutions', 'description' => 'Scalable cloud infrastructure, deployment, and monitoring.'],
+            ['icon' => 'shield', 'title' => 'Cybersecurity', 'description' => 'Security audits, hardening, and incident response planning.'],
+            ['icon' => 'compass', 'title' => 'IT Consulting', 'description' => 'Technology strategy and systems planning for growing teams.'],
         ];
 
         return view('pages.services', compact('company', 'services'));

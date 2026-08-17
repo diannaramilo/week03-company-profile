@@ -1,28 +1,34 @@
-<footer class="bg-gray-900 text-gray-300 mt-16">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+<footer class="bg-ink text-paper mt-24 relative overflow-hidden">
+    <div class="blob w-72 h-72 bg-violet -bottom-20 -left-10"></div>
+    <div class="blob w-64 h-64 bg-coral -bottom-10 right-0"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
         <div>
-            <h3 class="text-xl font-bold text-white mb-2">{{ $company['name'] ?? 'NovaTech Solutions' }}</h3>
-            <p class="text-sm text-gray-400">{{ $company['tagline'] ?? '' }}</p>
+            <div class="flex items-center gap-2.5 mb-3">
+                <span class="w-8 h-8 rounded-xl bg-gradient-to-br from-violet to-coral"></span>
+                <span class="font-display text-xl font-medium text-paper">NovaTech</span>
+            </div>
+            <p class="text-sm text-paper/60">{{ $company['tagline'] ?? '' }}</p>
         </div>
 
         <div>
-            <h4 class="font-semibold text-white mb-2">Contact</h4>
-            <p class="text-sm">{{ $company['address'] ?? '' }}</p>
-            <p class="text-sm">{{ $company['email'] ?? '' }}</p>
-            <p class="text-sm">{{ $company['phone'] ?? '' }}</p>
+            <h4 class="eyebrow text-xs text-mint mb-3">Contact</h4>
+            <p class="text-sm text-paper/80">{{ $company['address'] ?? '' }}</p>
+            <p class="text-sm text-paper/80">{{ $company['email'] ?? '' }}</p>
+            <p class="text-sm text-paper/80">{{ $company['phone'] ?? '' }}</p>
         </div>
 
         <div>
-            <h4 class="font-semibold text-white mb-2">Follow Us</h4>
-            <div class="flex gap-4 text-sm">
-                <a href="#" class="hover:text-indigo-400">Facebook</a>
-                <a href="#" class="hover:text-indigo-400">LinkedIn</a>
-                <a href="#" class="hover:text-indigo-400">Twitter</a>
+            <h4 class="eyebrow text-xs text-mint mb-3">Follow</h4>
+            <div class="flex flex-col gap-1.5 text-sm">
+                <a href="#" class="text-paper/80 hover:text-amber transition w-fit">Facebook</a>
+                <a href="#" class="text-paper/80 hover:text-amber transition w-fit">LinkedIn</a>
+                <a href="#" class="text-paper/80 hover:text-amber transition w-fit">Twitter</a>
             </div>
         </div>
     </div>
 
-    <div class="border-t border-gray-700 text-center py-4 text-sm text-gray-500">
+    <div class="relative border-t border-white/10 text-center py-5 eyebrow text-[11px] text-paper/50">
         &copy; {{ date('Y') }} {{ $company['name'] ?? 'NovaTech Solutions' }}. All rights reserved.
     </div>
 </footer>
